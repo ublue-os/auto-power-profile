@@ -28,7 +28,7 @@ Gnome extension to automatically switch between power profiles based on power su
 gnome-extensions pack --extra-source=ui
 mkdir -p %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
 unzip %{uuid}.shell-extension.zip -d %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
-rm %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}/schemas/gschemas.compiled
+rm -f %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}/schemas/gschemas.compiled
 glib-compile-schemas %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}/schemas/
 
 %files
