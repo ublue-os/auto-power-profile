@@ -38,6 +38,20 @@
                         <property name="model">platform_profile_model</property>
                     </object>
                 </child>
+                
+                <child>
+                    <object class="AdwActionRow" id="row_notify">
+                        <property name="title" translatable="yes">Notifications</property>
+                        <property name="subtitle" translatable="yes">Notify when the power profile is changed</property>
+                        <property name="activatable-widget">notify</property>
+                        <property name="visible">True</property>
+                        <child>
+                            <object class="GtkSwitch" id="notify">
+                                <property name="valign">center</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
             </object>
         </child>
 

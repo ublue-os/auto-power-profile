@@ -16,6 +16,10 @@
       <summary>Power saving threshold</summary>
       <description>Select battery level to turn on the power saving profile</description>
     </key>
+    <key name="notify" type="b">
+      <default>true</default>
+      <summary>Notify on power profile change</summary>
+    </key>
     <key name="lapmode" type="b">
       <default>true</default>
       <summary>lap-mode handling on AC</summary>

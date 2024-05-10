@@ -54,6 +54,8 @@ export const General = GObject.registerClass(
       "platform_profile_model",
       "row_lap_mode",
       "lap_mode",
+      "row_notify",
+      "notify"
     ],
   },
   class General extends Adw.PreferencesPage {
@@ -91,6 +93,12 @@ export const General = GObject.registerClass(
           settings.bind(
             "lapmode",
             this._lap_mode,
+            "active",
+            Gio.SettingsBindFlags.DEFAULT
+          );
+          settings.bind(
+            "notify",
+            this._notify,
             "active",
             Gio.SettingsBindFlags.DEFAULT
           );

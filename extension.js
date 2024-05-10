@@ -301,6 +301,7 @@ export default class AutoPowerProfile extends Extension {
       batteryDefault: this._settings.get_string("bat"),
       batteryThreshold: this._settings.get_int("threshold"),
       lapmode: this._settings.get_boolean("lapmode"),
+      notify: this._settings.get_boolean("notify"),
     };
     this._transition.report({});
     this._checkProfile();
@@ -354,6 +355,16 @@ export default class AutoPowerProfile extends Extension {
       return;
     }
     this._powerProfilesProxy.ActiveProfile = profile;
+
+    if(this._settingsCache.notify) {
+      const PROFILES_I18N = {
+        "performance": _("Performance"),
+        "balanced": _("Balanced"),
+        "power-saver": _("Power Saver"),
+      };
+    
+      Main.notify(_("Auto Power Profile"), _(`Power profile set to ${PROFILES_I18N[profile]}.`));
+    }
   };
 
   _checkProfile = () => {
